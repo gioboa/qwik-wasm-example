@@ -3,7 +3,7 @@ import { Qwik } from "./icons/Qwik";
 
 export const Header = component$(() => {
   return (
-    <nav class="fixed top-0 z-50 w-full border-b border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-800">
+    <nav class="fixed top-0 z-50 w-full border-b border-gray-200 dark:border-gray-700">
       <div class="px-3 py-3 lg:px-5 lg:pl-3">
         <div class="flex items-center justify-between">
           <div class="flex items-center justify-start rtl:justify-end">
