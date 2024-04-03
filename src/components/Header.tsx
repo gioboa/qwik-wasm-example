@@ -7,7 +7,7 @@ export const Header = component$(() => {
       <div class="px-3 py-3 lg:px-5 lg:pl-3">
         <div class="flex items-center justify-between">
           <div class="flex items-center justify-start">
-            <a href="https://flowbite.com" class="ms-2 flex md:me-24">
+            <a href="/" class="ms-2 flex md:me-24">
               <Qwik />
               <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white sm:text-2xl">
                 Qwik Image Editor with Rust ( WASM )
