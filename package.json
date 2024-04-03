@@ -17,6 +17,7 @@
     "build.preview": "vite build --ssr src/entry.preview.tsx",
     "build.server": "vite build -c adapters/cloudflare-pages/vite.config.ts",
     "build.types": "tsc --incremental --noEmit",
+    "build:wasm": "cd image-editor && wasm-pack build --target web && node modulize.js",
     "deploy": "wrangler pages deploy ./dist",
     "dev": "vite --mode ssr",
     "dev.debug": "node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force",
@@ -26,11 +27,12 @@
     "preview": "qwik build preview && vite preview --open",
     "serve": "wrangler pages dev ./dist --compatibility-flags=nodejs_als",
     "start": "vite --open --mode ssr",
-    "qwik": "qwik"
+    "qwik": "qwik",
+    "preinstall": "npm run build:wasm"
   },
   "devDependencies": {
-    "@builder.io/qwik": "^1.5.1",
-    "@builder.io/qwik-city": "^1.5.1",
+    "@builder.io/qwik": "file:../qwik/packages/qwik/dist",
+    "@builder.io/qwik-city": "file:../qwik/packages/qwik-city/lib",
     "@types/eslint": "^8.56.5",
     "@types/node": "^20.11.24",
     "@typescript-eslint/eslint-plugin": "^7.1.0",
@@ -38,6 +40,7 @@
     "autoprefixer": "^10.4.14",
     "eslint": "^8.57.0",
     "eslint-plugin-qwik": "^1.5.1",
+    "image-editor": "file:./image-editor/pkg",
     "postcss": "^8.4.31",
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.4",
@@ -45,6 +48,8 @@
     "typescript": "5.3.3",
     "undici": "*",
     "vite": "^5.1.4",
+    "vite-plugin-wasm-esm": "^1.0.1",
+    "vite-plugin-wasm-pack": "^0.1.12",
     "vite-tsconfig-paths": "^4.2.1",
     "wrangler": "^3.0.0"
   }
