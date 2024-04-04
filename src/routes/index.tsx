@@ -1,14 +1,12 @@
 import { component$, useSignal } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
-import { fib } from "wasm-package";
+import init, { fib } from "wasm-package";
 import { Aside } from "~/components/Aside";
 import { Header } from "~/components/Header";
-import { Loading } from "~/components/icons/Loading";
 
 export default component$(() => {
   const timeSig = useSignal(0);
   const resultSig = useSignal("");
-  const loadingSig = useSignal(false);
   const fibonacciNumSig = useSignal<number>(1);
 
   return (
@@ -26,14 +24,15 @@ export default component$(() => {
         <button
           class="mb-2 me-2 rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           onClick$={() => {
-            loadingSig.value = true;
-            const startTime = performance.now();
-            resultSig.value = fib(fibonacciNumSig.value).toString();
-            timeSig.value = performance.now() - startTime;
-            loadingSig.value = false;
+            // init will reuse a cached version if present
+            init().then(() => {
+              const startTime = performance.now();
+              resultSig.value = fib(fibonacciNumSig.value).toString();
+              timeSig.value = performance.now() - startTime;
+            });
           }}
         >
-          {loadingSig.value ? <Loading /> : "Calculate"}
+          Calculate
         </button>
         <div class="py-6 text-lg">
           {resultSig.value && `Result ${resultSig.value}`}
