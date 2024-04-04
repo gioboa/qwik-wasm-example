@@ -1,6 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
-import { greet } from "image-editor";
+import { greet } from "wasm-package";
 import { Aside } from "~/components/Aside";
 import { Header } from "~/components/Header";
 

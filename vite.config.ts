@@ -20,7 +20,7 @@ const { dependencies = {}, devDependencies = {} } = pkg as any as {
  */
 export default defineConfig(({ command, mode }): UserConfig => {
   return {
-    plugins: [wasm(["image-editor"]), qwikCity(), qwikVite(), tsconfigPaths()],
+    plugins: [wasm(["wasm-package"]), qwikCity(), qwikVite(), tsconfigPaths()],
     // This tells Vite which dependencies to pre-build in dev mode.
     optimizeDeps: {
       // Put problematic deps that break bundling here, mostly those with binaries.

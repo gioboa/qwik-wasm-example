@@ -32,9 +32,9 @@ devDependencies:
   eslint-plugin-qwik:
     specifier: ^1.5.1
     version: 1.5.1(eslint@8.57.0)
-  image-editor:
-    specifier: file:./image-editor/pkg
-    version: file:image-editor/pkg
+  wasm-package:
+    specifier: file:./wasm-package/pkg
+    version: file:wasm-package/pkg
   postcss:
     specifier: ^8.4.31
     version: 8.4.38
@@ -4588,7 +4588,7 @@ packages:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
     dev: true
 
-  file:image-editor/pkg:
-    resolution: {directory: image-editor/pkg, type: directory}
-    name: image-editor
+  file:wasm-package/pkg:
+    resolution: {directory: wasm-package/pkg, type: directory}
+    name: wasm-package
     dev: true

@@ -44,5 +44,5 @@ lerna-debug.log*
 functions/**/*.js
 
 # Rust
-image-editor/target/*
-image-editor/pkg/*
+wasm-package/target/*
+wasm-package/pkg/*
