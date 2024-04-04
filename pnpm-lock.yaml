@@ -32,9 +32,6 @@ devDependencies:
   eslint-plugin-qwik:
     specifier: ^1.5.1
     version: 1.5.1(eslint@8.57.0)
-  wasm-package:
-    specifier: file:./wasm-package/pkg
-    version: file:wasm-package/pkg
   postcss:
     specifier: ^8.4.31
     version: 8.4.38
@@ -56,9 +53,6 @@ devDependencies:
   vite:
     specifier: ^5.1.4
     version: 5.2.4(@types/node@20.11.30)
-  vite-plugin-wasm-esm:
-    specifier: ^1.0.1
-    version: 1.0.1(vite@5.2.4)
   vite-plugin-wasm-pack:
     specifier: ^0.1.12
     version: 0.1.12
@@ -4375,14 +4369,6 @@ packages:
       - rollup
     dev: true
 
-  /vite-plugin-wasm-esm@1.0.1(vite@5.2.4):
-    resolution: {integrity: sha512-Lbc1SNzePrnWiQUa12Jv+BE9AWwMqxTkyYVdC+j9WrnPMFhnwcRGr2mTB/Law07dfl578+0Bu46vh0aVbRsA7Q==}
-    peerDependencies:
-      vite: 3.x || 4.x || 5.x
-    dependencies:
-      vite: 5.2.4(@types/node@20.11.30)
-    dev: true
-
   /vite-plugin-wasm-pack@0.1.12:
     resolution: {integrity: sha512-WliYvQp9HXluir4OKGbngkcKxtYtifU11cqLurRRJGsl770Sjr1iIkp5RuvU3IC1poT4A57Z2/YgAKI2Skm7ZA==}
     dependencies:
@@ -4586,9 +4572,4 @@ packages:
 
   /zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
-    dev: true
-
-  file:wasm-package/pkg:
-    resolution: {directory: wasm-package/pkg, type: directory}
-    name: wasm-package
     dev: true

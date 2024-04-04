@@ -8,10 +8,6 @@ With Rust it's practically instantaneous. 🚀
 ## Steps
 
 ```shell
-pnpm build:wasm
-```
-
-```shell
 pnpm install
 ```
 

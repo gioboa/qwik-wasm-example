@@ -5,7 +5,7 @@
 import { qwikCity } from "@builder.io/qwik-city/vite";
 import { qwikVite } from "@builder.io/qwik/optimizer";
 import { defineConfig, type UserConfig } from "vite";
-import wasm from "vite-plugin-wasm-esm";
+import wasmPack from 'vite-plugin-wasm-pack';
 import tsconfigPaths from "vite-tsconfig-paths";
 import pkg from "./package.json";
 
@@ -20,7 +20,7 @@ const { dependencies = {}, devDependencies = {} } = pkg as any as {
  */
 export default defineConfig(({ command, mode }): UserConfig => {
   return {
-    plugins: [wasm(["wasm-package"]), qwikCity(), qwikVite(), tsconfigPaths()],
+    plugins: [wasmPack(["./wasm-package"]), qwikCity(), qwikVite(), tsconfigPaths()],
     // This tells Vite which dependencies to pre-build in dev mode.
     optimizeDeps: {
       // Put problematic deps that break bundling here, mostly those with binaries.
